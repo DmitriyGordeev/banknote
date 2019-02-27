@@ -19,7 +19,7 @@ public class FService extends Service {
         super.onCreate();
 
         NotificationCompat.Builder builder = new NotificationCompat.Builder(getApplicationContext());
-        builder.setContentTitle("Sms parser");
+        builder.setContentTitle("BankNote - разбор входящих смс включен");
         builder.setSmallIcon(R.mipmap.ic_launcher);
         builder.build();
 
