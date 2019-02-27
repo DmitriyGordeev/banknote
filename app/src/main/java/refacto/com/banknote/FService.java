@@ -8,7 +8,6 @@ import android.support.v4.app.NotificationCompat;
 
 public class FService extends Service {
 
-    IncomingSms incomingSms = new IncomingSms();
     public static boolean isActive;
 
     public FService() {
