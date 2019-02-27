@@ -5,20 +5,22 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_accounts"
-            android:icon="@drawable/ic_menu_manage"
+            android:icon="@drawable/ic_attach_money_black_24dp"
             android:title="Cчета" />
 
         <item
             android:id="@+id/nav_groups"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:icon="@drawable/ic_local_pizza_black_24dp"
             android:title="Категории" />
 
         <item android:id="@+id/nav_switch"
             app:actionLayout="@layout/layout_switch"
+            android:icon="@drawable/ic_receipt_black_24dp"
             android:title="Разбор СМС" />
 
         <item
             android:id="@+id/nav_patterns"
+            android:icon="@drawable/ic_code_black_24dp"
             android:title="Паттерны" />
 
         <item
