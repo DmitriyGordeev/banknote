@@ -93,7 +93,7 @@
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="10dp"
                     android:layout_weight="1"
-                    app:srcCompat="@drawable/ic_menu_manage" />
+                    app:srcCompat="@drawable/ic_settings_black_24dp" />
 
                 <TextView
                     android:id="@+id/textView_groupFilter"

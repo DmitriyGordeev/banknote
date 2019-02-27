@@ -6,14 +6,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class AccountsListActivity extends Activity {
 
-    private static final String LOGTAG = "MyLog-AccountsActivity";
     ListView _listView;
     AccountAdapter _adapter;
     DataBaseHandler dbHandler;
@@ -22,7 +19,7 @@ public class AccountsListActivity extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.accounts_list_activity);
-        _listView = (ListView)findViewById(R.id.listView_accountsList);
+        _listView = findViewById(R.id.listView_accountsList);
         dbHandler = new DataBaseHandler(this, "FundachDB");
 
         handleListInteractions();
