@@ -141,13 +141,6 @@ public class MainActivity extends AppCompatActivity
 
             Intent intent = new Intent(this, GroupListAcitvity.class);
             startActivity(intent);
-
-        } else if (id == R.id.nav_manage) {
-
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
-
         }
 
         DrawerLayout drawer =  findViewById(R.id.drawer_layout);
