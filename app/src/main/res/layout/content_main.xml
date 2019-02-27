@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.example.dima.navdraw.MainActivity"
+    tools:showIn="@layout/app_bar_main">
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
+        android:background="@color/colorRed"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textView_restLabel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:paddingLeft="10dp"
+            android:text="Остаток"
+            android:textColor="@color/colorGray"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/textView_restValue"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:paddingLeft="10dp"
+            android:text="TextView"
+            android:textColor="@color/colorDarkBlue"
+            android:textSize="18dp" />
+
+        <TextView
+            android:id="@+id/textView_dayConsumeLabel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:paddingLeft="10dp"
+            android:text="Расход за сегодня"
+            android:textColor="@color/colorGray"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/textView_dayConsumeValue"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:paddingLeft="10dp"
+            android:text="TextView"
+            android:textColor="@color/colorDarkBlue"
+            android:textSize="18dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout_filterStroke"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_below="@+id/linearLayout"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dp"
+            android:paddingTop="10dp"
+            android:text="Фильтр"
+            android:textColor="@color/colorLightBlue"
+            android:textSize="12sp">
+
+        </TextView>
+
+        <HorizontalScrollView
+            android:id="@+id/hscrollView_filterStroke"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/imageView_filter"
+                    android:layout_width="30dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight="1"
+                    app:srcCompat="@drawable/ic_menu_manage" />
+
+                <TextView
+                    android:id="@+id/textView_groupFilter"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:text="Группа"
+                    android:textColor="@color/colorDarkBlue"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:id="@+id/textView_accountFilter"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp"
+                    android:text="Счет"
+                    android:textColor="@color/colorDarkBlue"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:id="@+id/textView_dateFilter"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp"
+                    android:text="Дата"
+                    android:textColor="@color/colorDarkBlue"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:id="@+id/textView_smsFilter"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp"
+                    android:text="Из СМС"
+                    android:textColor="@color/colorDarkBlue"
+                    android:textSize="15dp" />
+
+            </LinearLayout>
+        </HorizontalScrollView>
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/listView"
+        android:layout_width="395dp"
+        android:layout_height="400dp"
+        android:layout_alignParentBottom="true"
+        android:layout_below="@+id/linearLayout_filterStroke"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="6dp"
+        android:layout_marginRight="6dp"
+        android:layout_marginTop="10dp"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+</RelativeLayout>

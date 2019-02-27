@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/btn_selectGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:onClick="onSelectGroup"
+        android:text="Выбрать категорию" />
+
+    <Button
+        android:id="@+id/btn_selectAccount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/btn_selectGroup"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/btn_selectGroup"
+        android:onClick="onSelectAccount"
+        android:text="Выбрать счет" />
+
+    <TextView
+        android:id="@+id/textValueLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignTop="@+id/editText_Value"
+        android:layout_marginStart="10dp"
+        android:text="Value" />
+
+    <EditText
+        android:id="@+id/editText_Value"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/btn_selectAccount"
+        android:layout_marginStart="11dp"
+        android:layout_marginTop="27dp"
+        android:layout_toEndOf="@+id/textValueLabel"
+        android:inputType="number|numberSigned|numberDecimal" />
+
+    <Button
+        android:id="@+id/btn_addTransaction"
+        style="@style/Widget.AppCompat.Button.Borderless.Colored"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/btn_cancelAddTransaction"
+        android:onClick="onAddTransaction"
+        android:text="Добавить"
+        android:textColor="@android:color/holo_green_dark" />
+
+    <Button
+        android:id="@+id/btn_cancelAddTransaction"
+        style="@style/Widget.AppCompat.Button.Borderless.Colored"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:onClick="onCancelAddTransaction"
+        android:text="Отмена" />
+
+    <TextView
+        android:id="@+id/textSelectedGroupName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/btn_selectGroup"
+        android:layout_alignBottom="@+id/btn_selectGroup"
+        android:layout_marginLeft="15dp"
+        android:layout_toEndOf="@+id/btn_selectGroup"
+        android:text="Не выбрана каегория" />
+
+    <TextView
+        android:id="@+id/textSelectedAccountName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/btn_selectAccount"
+        android:layout_alignBottom="@+id/btn_selectAccount"
+        android:layout_marginLeft="15dp"
+        android:layout_toEndOf="@+id/btn_selectAccount"
+        android:text="Не выбран счет" />
+
+</RelativeLayout>
