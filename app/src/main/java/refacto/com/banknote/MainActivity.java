@@ -47,24 +47,24 @@ public class MainActivity extends AppCompatActivity
         Toolbar toolbar = findViewById(R.id.toolbar);
         // setSupportActionBar(toolbar);
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        DrawerLayout drawer =  findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.setDrawerListener(toggle);
         toggle.syncState();
 
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        NavigationView navigationView =  findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
 
         /* initialize layout objects: */
-        lv = (ListView)findViewById(R.id.listView);
+        lv = findViewById(R.id.listView);
         dbHandler = new DataBaseHandler(this, "FundachDB");
         dbHandler.defaultPatterns(dbHandler.getWritableDatabase());
-        _smsServiceSwitcher = (SwitchCompat) findViewById(R.id.drawer_sms_switch);
-        textView_dayConsumeValue = (TextView) findViewById(R.id.textView_dayConsumeValue);
-        textView_restValue = (TextView) findViewById(R.id.textView_restValue);
-        hscrollView_filterStroke = (HorizontalScrollView)findViewById(R.id.hscrollView_filterStroke);
+        _smsServiceSwitcher =  findViewById(R.id.drawer_sms_switch);
+        textView_dayConsumeValue =  findViewById(R.id.textView_dayConsumeValue);
+        textView_restValue =  findViewById(R.id.textView_restValue);
+        hscrollView_filterStroke = findViewById(R.id.hscrollView_filterStroke);
 
         handleListInteractions();
 
@@ -72,7 +72,7 @@ public class MainActivity extends AppCompatActivity
         Menu menu = navigationView.getMenu();
         MenuItem menuItem = menu.findItem(R.id.nav_switch);
         View actionView = MenuItemCompat.getActionView(menuItem);
-        _smsServiceSwitcher = (SwitchCompat)actionView.findViewById(R.id.drawer_sms_switch);
+        _smsServiceSwitcher = actionView.findViewById(R.id.drawer_sms_switch);
         _smsServiceSwitcher.setChecked(FService.isActive);
         _smsServiceSwitcher.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -91,7 +91,7 @@ public class MainActivity extends AppCompatActivity
 
     @Override
     public void onBackPressed() {
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        DrawerLayout drawer =  findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
@@ -150,7 +150,7 @@ public class MainActivity extends AppCompatActivity
 
         }
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        DrawerLayout drawer =  findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
@@ -248,7 +248,7 @@ public class MainActivity extends AppCompatActivity
                 Intent intent = new Intent(getApplicationContext(), AddTransactionActivity.class);
 
                 Object object = parent.getAdapter().getItem(position);
-                TransactionWide trWide = (TransactionWide)object;
+                TransactionWide trWide = (TransactionWide) object;
 
                 Group group = trWide.group;
                 Account account = trWide.account;

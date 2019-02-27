@@ -2,20 +2,113 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="refacto.com.banknote">
 
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-permission android:name="android.permission.READ_SMS" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme.NoActionBar">
-        <activity android:name=".MainActivity">
+        android:theme="@style/AppTheme">
+        <activity
+            android:name="refacto.com.banknote.MainActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme">
             <intent-filter>
-                <action android:name="android.intent.action.VIEW" />
                 <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.VIEW" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".AddTransactionActivity"
+            android:parentActivityName=".MainActivity"
+            android:noHistory="true">
+
+            <!-- The meta-data tag is required if you support API level 15 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
+
+        <activity android:name=".SelectPatternActivity"
+            android:parentActivityName=".MainActivity"
+            android:noHistory="true">
+
+            <!-- The meta-data tag is required if you support API level 15 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
+
+        <activity android:name=".EditPatternActivity"
+            android:noHistory="true">
+        </activity>
+
+        <activity android:name=".AccountsListActivity">
+        </activity>
+
+        <activity android:name=".GroupListAcitvity">
+        </activity>
+
+        <activity android:name=".EditAccountActivity"
+            android:parentActivityName=".AccountsListActivity"
+            android:noHistory="true">
+
+            <!-- The meta-data tag is required if you support API level 15 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".AccountsListActivity" />
+        </activity>
+
+
+        <activity android:name=".EditGroupActivity"
+            android:parentActivityName=".GroupListAcitvity"
+            android:noHistory="true">
+
+            <!-- The meta-data tag is required if you support API level 15 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".GroupListAcitvity" />
+        </activity>
+
+
+        <activity android:name=".EditTransactionActivity"
+            android:parentActivityName=".MainActivity"
+            android:noHistory="true">
+
+            <!-- The meta-data tag is required if you support API level 15 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
+
+        <activity android:name=".SmsReader"
+            android:noHistory="true">
+        </activity>
+
+        <activity android:name=".SmsMessagesList"
+            android:noHistory="true">
+        </activity>
+
+
+        <receiver android:name=".IncomingSms">
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SMS_RECEIVED" />
+            </intent-filter>
+        </receiver>
+
+        <service
+            android:name=".FService"
+            android:enabled="true"
+            android:exported="true"></service>
+
     </application>
 
 </manifest>

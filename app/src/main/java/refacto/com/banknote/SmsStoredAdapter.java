@@ -11,10 +11,10 @@ import java.util.ArrayList;
 
 public class SmsStoredAdapter extends BaseAdapter {
 
-    Context _context;
-    LayoutInflater _inflater;
-    ArrayList<SmsStored> _data;
-    int _layoutResourceId;
+    private Context _context;
+    private LayoutInflater _inflater;
+    private ArrayList<SmsStored> _data;
+    private int _layoutResourceId;
 
     SmsStoredAdapter(Context context, int layoutResourceId, ArrayList<SmsStored> data) {
         _context = context;
