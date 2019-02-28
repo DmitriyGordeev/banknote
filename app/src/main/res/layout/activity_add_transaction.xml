@@ -4,55 +4,81 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent" android:layout_height="match_parent">
 
-    <Button
-        android:id="@+id/btn_selectGroup"
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/constraintLayout_accounts"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:onClick="onSelectGroup"
-        android:text="Выбрать категорию"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="8dp"
+        android:padding="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_selectAccount" />
+        app:layout_constraintTop_toTopOf="parent">
 
-    <Button
-        android:id="@+id/btn_selectAccount"
+        <TextView
+            android:id="@+id/textSelectedAccountName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:padding="4dp"
+            android:text="Не выбран счет"
+            app:layout_constraintStart_toStartOf="@+id/constraintLayout_accounts"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Spinner
+            android:id="@+id/spinnerAccounts"
+            android:layout_width="110dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            app:layout_constraintStart_toEndOf="@+id/textSelectedAccountName"
+            app:layout_constraintTop_toTopOf="@+id/textSelectedAccountName" />
+
+    </android.support.constraint.ConstraintLayout>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/constraintLayout_groups"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/btn_selectGroup"
-        android:layout_alignEnd="@+id/btn_selectGroup"
-        android:layout_alignParentStart="true"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:onClick="onSelectAccount"
-        android:text="Выбрать счет"
+        android:layout_marginEnd="8dp"
+        android:padding="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout_accounts">
 
-    <TextView
-        android:id="@+id/textValueLabel"
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:layout_alignTop="@+id/editText_Value"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:text="Value"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_selectGroup" />
+        <TextView
+            android:id="@+id/textSelectedGroupName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:padding="4dp"
+            android:text="Не выбрана каегория" />
+
+        <Spinner
+            android:id="@+id/spinnerGroups"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            app:layout_constraintStart_toEndOf="@+id/textSelectedGroupName"
+            app:layout_constraintTop_toTopOf="@+id/textSelectedGroupName" />
+    </android.support.constraint.ConstraintLayout>
 
     <EditText
         android:id="@+id/editText_Value"
-        android:layout_width="101dp"
-        android:layout_height="50dp"
-        android:layout_below="@+id/btn_selectAccount"
+        android:layout_width="104dp"
+        android:layout_height="wrap_content"
+
+        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
         android:layout_toEndOf="@+id/textValueLabel"
+        android:hint="Сумма"
         android:inputType="number|numberSigned|numberDecimal"
-        app:layout_constraintStart_toEndOf="@+id/textValueLabel"
-        app:layout_constraintTop_toBottomOf="@+id/btn_selectGroup" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout_groups" />
 
     <Button
         android:id="@+id/btn_addTransaction"
@@ -81,31 +107,5 @@
         android:text="Отмена"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/btn_addTransaction" />
-
-    <TextView
-        android:id="@+id/textSelectedGroupName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/btn_selectGroup"
-        android:layout_alignBottom="@+id/btn_selectGroup"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_toEndOf="@+id/btn_selectGroup"
-        android:text="Не выбрана каегория"
-        app:layout_constraintStart_toEndOf="@+id/btn_selectGroup"
-        app:layout_constraintTop_toBottomOf="@+id/btn_selectAccount" />
-
-    <TextView
-        android:id="@+id/textSelectedAccountName"
-        android:layout_width="108dp"
-        android:layout_height="17dp"
-        android:layout_alignBaseline="@+id/btn_selectAccount"
-        android:layout_alignBottom="@+id/btn_selectAccount"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_toEndOf="@+id/btn_selectAccount"
-        android:text="Не выбран счет"
-        app:layout_constraintStart_toEndOf="@+id/btn_selectAccount"
-        app:layout_constraintTop_toTopOf="parent" />
 
 </android.support.constraint.ConstraintLayout>

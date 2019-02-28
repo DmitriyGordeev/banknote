@@ -3,19 +3,25 @@ package refacto.com.banknote;
 import android.app.Activity;
 import android.app.Dialog;
 import android.content.Intent;
+import android.database.DataSetObserver;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.Spinner;
+import android.widget.SpinnerAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import java.sql.Date;
 import java.sql.Time;
 import java.util.ArrayList;
+import java.util.List;
 
 public class AddTransactionActivity extends Activity {
 
@@ -40,6 +46,9 @@ public class AddTransactionActivity extends Activity {
     boolean is_edit;
     int transaction_id;
 
+    private Spinner _spinnerGroups;
+    private Spinner _spinnerAccounts;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,9 +61,73 @@ public class AddTransactionActivity extends Activity {
         _selectedGroupName = "";
 
         dbHandler = new DataBaseHandler(this, "FundachDB");
-        editText = (EditText)findViewById(R.id.editText_Value);
-        textViewSelectenGroupName = (TextView) findViewById(R.id.textSelectedGroupName);
-        textViewSelectenAccountName = (TextView) findViewById(R.id.textSelectedAccountName);
+        editText = findViewById(R.id.editText_Value);
+        textViewSelectenGroupName = findViewById(R.id.textSelectedGroupName);
+        textViewSelectenAccountName = findViewById(R.id.textSelectedAccountName);
+
+        /* handle spinner element: */
+        _spinnerGroups = findViewById(R.id.spinnerGroups);
+        _spinnerAccounts = findViewById(R.id.spinnerAccounts);
+
+        ArrayList<Group> groups = dbHandler.pullGroups();
+        ArrayList<Account> accounts = dbHandler.pullAccounts();
+
+        final List<String> groupNames = new ArrayList<>();
+        final List<String> accountNames = new ArrayList<>();
+
+        for(Group g : groups) {
+            groupNames.add(g.name());
+        }
+
+        for(Account a : accounts) {
+            accountNames.add(a.name());
+        }
+
+        // Put values inside groups spinner:
+        ArrayAdapter<String> groupsDataAdapter = new ArrayAdapter<>(this,
+                android.R.layout.simple_spinner_item, groupNames);
+        groupsDataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        _spinnerGroups.setAdapter(groupsDataAdapter);
+
+
+
+        /* handle spinner group selection selection */
+        _spinnerGroups.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                textViewSelectenGroupName.setText(groupNames.get(position));
+                _selectedGroupId = position;
+                _selectedGroupName = groupNames.get(position);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
+
+
+        // Put values inside accounts spinner:
+        ArrayAdapter<String> accountsDataAdapter = new ArrayAdapter<>(this,
+                android.R.layout.simple_spinner_item, accountNames);
+        accountsDataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        _spinnerAccounts.setAdapter(accountsDataAdapter);
+
+        _spinnerAccounts.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                textViewSelectenAccountName.setText(accountNames.get(position));
+                _selectedAccountId = position;
+                _selectedAccountName = accountNames.get(position);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
 
 
         // assigning values if something received via intent:
