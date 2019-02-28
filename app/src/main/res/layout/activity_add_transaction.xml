@@ -5,80 +5,99 @@
     android:layout_width="match_parent" android:layout_height="match_parent">
 
     <android.support.constraint.ConstraintLayout
-        android:id="@+id/constraintLayout_accounts"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
-        android:padding="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@android:color/white"
+        android:elevation="1dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:paddingBottom="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/btn_addTransaction"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
-            android:id="@+id/textSelectedAccountName"
-            android:layout_width="wrap_content"
+        <EditText
+            android:id="@+id/editText_Value"
+            android:layout_width="104dp"
             android:layout_height="wrap_content"
 
-            android:padding="4dp"
-            android:text="Не выбран счет"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_toEndOf="@+id/textValueLabel"
+            android:hint="Сумма"
+            android:inputType="number|numberSigned|numberDecimal"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout_groups" />
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/constraintLayout_groups"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@color/colorLightBlue"
+            android:padding="8dp"
+            app:layout_constraintEnd_toEndOf="@+id/constraintLayout_accounts"
             app:layout_constraintStart_toStartOf="@+id/constraintLayout_accounts"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout_accounts">
 
-        <Spinner
-            android:id="@+id/spinnerAccounts"
-            android:layout_width="110dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            app:layout_constraintStart_toEndOf="@+id/textSelectedAccountName"
-            app:layout_constraintTop_toTopOf="@+id/textSelectedAccountName" />
+            <TextView
+                android:id="@+id/textSelectedGroupName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
 
-    </android.support.constraint.ConstraintLayout>
+                android:padding="4dp"
+                android:text="Не выбрана каегория" />
 
-    <android.support.constraint.ConstraintLayout
-        android:id="@+id/constraintLayout_groups"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:padding="8dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout_accounts">
+            <Spinner
+                android:id="@+id/spinnerGroups"
+                android:layout_width="110dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/textSelectedGroupName" />
+        </android.support.constraint.ConstraintLayout>
 
-        <TextView
-            android:id="@+id/textSelectedGroupName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-
-            android:padding="4dp"
-            android:text="Не выбрана каегория" />
-
-        <Spinner
-            android:id="@+id/spinnerGroups"
-            android:layout_width="wrap_content"
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/constraintLayout_accounts"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            app:layout_constraintStart_toEndOf="@+id/textSelectedGroupName"
-            app:layout_constraintTop_toTopOf="@+id/textSelectedGroupName" />
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="8dp"
+            android:background="@color/colorRed"
+            android:padding="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/textSelectedAccountName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:padding="4dp"
+                android:text="Не выбран счет"
+                app:layout_constraintStart_toStartOf="@+id/constraintLayout_accounts"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Spinner
+                android:id="@+id/spinnerAccounts"
+                android:layout_width="110dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/textSelectedAccountName" />
+
+        </android.support.constraint.ConstraintLayout>
     </android.support.constraint.ConstraintLayout>
-
-    <EditText
-        android:id="@+id/editText_Value"
-        android:layout_width="104dp"
-        android:layout_height="wrap_content"
-
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_toEndOf="@+id/textValueLabel"
-        android:hint="Сумма"
-        android:inputType="number|numberSigned|numberDecimal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout_groups" />
 
     <Button
         android:id="@+id/btn_addTransaction"
