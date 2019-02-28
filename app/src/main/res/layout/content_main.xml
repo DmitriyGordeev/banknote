@@ -33,7 +33,8 @@
             android:paddingLeft="10dp"
             android:text="TextView"
             android:textColor="@color/colorDarkBlue"
-            android:textSize="18dp" />
+            android:textSize="18dp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/textView_dayConsumeLabel"
@@ -53,7 +54,8 @@
             android:paddingLeft="10dp"
             android:text="TextView"
             android:textColor="@color/colorDarkBlue"
-            android:textSize="18dp" />
+            android:textSize="18dp"
+            android:textStyle="bold" />
 
     </LinearLayout>
 
