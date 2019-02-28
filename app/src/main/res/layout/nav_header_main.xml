@@ -20,9 +20,10 @@
         android:layout_marginStart="4dp"
         android:layout_marginBottom="8dp"
         android:paddingTop="10dp"
-        android:text="Android Studio"
+        android:text="BankNote"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         android:textColor="@android:color/white"
+        android:textSize="22dp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
