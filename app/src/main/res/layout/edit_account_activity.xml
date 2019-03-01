@@ -18,7 +18,7 @@
         android:background="@android:color/transparent"
         android:onClick="onAccountConfirm"
         android:text="Добавить"
-        android:textColor="@android:color/white"
+        android:textColor="@color/colorLightBlue"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
