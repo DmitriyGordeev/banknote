@@ -92,12 +92,14 @@ public class AddTransactionActivity extends Activity {
 
 
         /* handle spinner group selection selection */
+        _spinnerGroups.setSelection(-1, false);
         _spinnerGroups.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 textViewSelectenGroupName.setText(groupNames.get(position));
-                _selectedGroupId = position;
+                _selectedGroupId = position + 1;
                 _selectedGroupName = groupNames.get(position);
+                Log.i("onItemSelected", "onItemSelected: ");
             }
 
             @Override
@@ -118,7 +120,7 @@ public class AddTransactionActivity extends Activity {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 textViewSelectenAccountName.setText(accountNames.get(position));
-                _selectedAccountId = position;
+                _selectedAccountId = position + 1;
                 _selectedAccountName = accountNames.get(position);
             }
 
