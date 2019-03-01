@@ -2,7 +2,8 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent" android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
     <EditText
         android:id="@+id/editText_bank"
@@ -31,8 +32,9 @@
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
         android:text="Банк"
-        android:textColor="@android:color/holo_blue_dark"
+        android:textColor="@color/colorDarkBlue"
         android:textSize="18dp"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView_accountTypeLabel" />
 
@@ -48,8 +50,9 @@
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
         android:text="Название"
-        android:textColor="@android:color/holo_blue_dark"
+        android:textColor="@color/colorDarkBlue"
         android:textSize="18dp"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -80,8 +83,9 @@
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
         android:text="Значение"
-        android:textColor="@android:color/holo_blue_dark"
+        android:textColor="@color/colorDarkBlue"
         android:textSize="18dp"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView_accountNameLabel" />
 
@@ -125,8 +129,9 @@
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
         android:text="Тип"
-        android:textColor="@android:color/holo_blue_dark"
+        android:textColor="@color/colorDarkBlue"
         android:textSize="18dp"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView_accountSmsLabel" />
 
@@ -143,8 +148,9 @@
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
         android:text="Номер СМС"
-        android:textColor="@android:color/holo_blue_dark"
+        android:textColor="@color/colorDarkBlue"
         android:textSize="18dp"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView_accountValueLabel" />
 
@@ -175,7 +181,7 @@
         android:background="@android:color/transparent"
         android:onClick="onAccountConfirm"
         android:text="Добавить"
-        android:textColor="@android:color/holo_blue_dark"
+        android:textColor="@color/colorDarkBlue"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
