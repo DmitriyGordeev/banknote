@@ -1,194 +1,199 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent" android:layout_height="match_parent">
 
-    <RelativeLayout
-        android:id="@+id/relativeLayout2"
-        android:layout_width="match_parent"
+    <EditText
+        android:id="@+id/editText_bank"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:paddingBottom="10dp"
-        android:paddingTop="10dp"
         android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true">
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_toEndOf="@+id/textView_accountBank"
+        android:elevation="2dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView_accountBank"
+        app:layout_constraintTop_toTopOf="@+id/textView_accountBank" />
 
-        <TextView
-            android:id="@+id/textView_accountNameLabel"
-            android:layout_width="120dp"
-            android:layout_height="wrap_content"
-            android:gravity="center_vertical"
-            android:paddingLeft="10dp"
-            android:paddingRight="10dp"
-            android:text="Название"
-            android:textColor="@android:color/holo_blue_dark"
-            android:textSize="18dp"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentStart="true" />
+    <TextView
+        android:id="@+id/textView_accountBank"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/editText_smsNumber"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="24dp"
+        android:gravity="center_vertical"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:text="Банк"
+        android:textColor="@android:color/holo_blue_dark"
+        android:textSize="18dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView_accountTypeLabel" />
 
-        <EditText
-            android:id="@+id/editText_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginRight="20dp"
-            android:layout_toEndOf="@+id/textView_accountNameLabel" />
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:layout_width="match_parent"
+    <TextView
+        android:id="@+id/textView_accountNameLabel"
+        android:layout_width="120dp"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/relativeLayout2"
-        android:paddingBottom="10dp"
-        android:paddingTop="10dp"
-        android:id="@+id/relativeLayout3">
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:gravity="center_vertical"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:text="Название"
+        android:textColor="@android:color/holo_blue_dark"
+        android:textSize="18dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/textView_accountBank"
-            android:layout_width="120dp"
-            android:layout_height="wrap_content"
-            android:layout_alignBottom="@+id/editText_smsNumber"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:gravity="center_vertical"
-            android:paddingLeft="10dp"
-            android:paddingRight="10dp"
-            android:text="Банк"
-            android:textColor="@android:color/holo_blue_dark"
-            android:textSize="18dp" />
-
-        <EditText
-            android:id="@+id/editText_bank"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginRight="20dp"
-            android:layout_toEndOf="@+id/textView_accountBank" />
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:layout_width="match_parent"
+    <EditText
+        android:id="@+id/editText_name"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:paddingBottom="10dp"
-        android:paddingTop="10dp"
-        android:layout_below="@+id/relativeLayout3"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_toEndOf="@+id/textView_accountNameLabel"
+        android:elevation="2dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView_accountNameLabel"
+        app:layout_constraintTop_toTopOf="@+id/textView_accountNameLabel" />
+
+    <TextView
+        android:id="@+id/textView_accountValueLabel"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/editText_smsNumber"
         android:layout_alignParentStart="true"
-        android:id="@+id/relativeLayout4">
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="24dp"
+        android:gravity="center_vertical"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:text="Значение"
+        android:textColor="@android:color/holo_blue_dark"
+        android:textSize="18dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView_accountNameLabel" />
 
-        <TextView
-            android:id="@+id/textView_accountValueLabel"
-            android:layout_width="120dp"
-            android:layout_height="wrap_content"
-            android:layout_alignBottom="@+id/editText_smsNumber"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:gravity="center_vertical"
-            android:paddingLeft="10dp"
-            android:paddingRight="10dp"
-            android:text="Значение"
-            android:textColor="@android:color/holo_blue_dark"
-            android:textSize="18dp" />
-
-        <EditText
-            android:id="@+id/editText_value"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginRight="20dp"
-            android:layout_toEndOf="@+id/textView_accountValueLabel"
-            android:inputType="numberDecimal" />
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:id="@+id/relativeLayout5"
-        android:layout_width="match_parent"
+    <EditText
+        android:id="@+id/editText_value"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:paddingBottom="10dp"
-        android:paddingTop="10dp"
-        android:layout_below="@+id/relativeLayout4"
-        android:layout_alignParentStart="true">
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_toEndOf="@+id/textView_accountValueLabel"
+        android:elevation="2dp"
+        android:inputType="numberDecimal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView_accountValueLabel"
+        app:layout_constraintTop_toTopOf="@+id/textView_accountValueLabel" />
 
-        <TextView
-            android:id="@+id/textView_accountTypeLabel"
-            android:layout_width="120dp"
-            android:layout_height="wrap_content"
-            android:layout_alignBottom="@+id/editText_smsNumber"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:gravity="center_vertical"
-            android:paddingLeft="10dp"
-            android:paddingRight="10dp"
-            android:text="Тип"
-            android:textColor="@android:color/holo_blue_dark"
-            android:textSize="18dp" />
-
-        <Spinner
-            android:id="@+id/spinner_accountType"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_toEndOf="@+id/textView_accountTypeLabel" />
-
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:id="@+id/relativeLayout6"
-        android:layout_width="match_parent"
+    <Spinner
+        android:id="@+id/spinner_accountType"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:paddingBottom="10dp"
-        android:paddingTop="10dp"
-        android:layout_below="@+id/relativeLayout5"
-        android:layout_alignParentStart="true">
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_toEndOf="@+id/textView_accountTypeLabel"
+        android:elevation="2dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView_accountTypeLabel"
+        app:layout_constraintTop_toTopOf="@+id/textView_accountTypeLabel" />
 
-        <TextView
-            android:id="@+id/textView_accountSmsLabel"
-            android:layout_width="120dp"
-            android:layout_height="wrap_content"
-            android:layout_alignBottom="@+id/editText_smsNumber"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:gravity="center_vertical"
-            android:paddingLeft="10dp"
-            android:paddingRight="10dp"
-            android:text="Номер СМС"
-            android:textColor="@android:color/holo_blue_dark"
-            android:textSize="18dp" />
+    <TextView
+        android:id="@+id/textView_accountTypeLabel"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/editText_smsNumber"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="24dp"
+        android:gravity="center_vertical"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:text="Тип"
+        android:textColor="@android:color/holo_blue_dark"
+        android:textSize="18dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView_accountSmsLabel" />
 
-        <EditText
-            android:id="@+id/editText_smsNumber"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginRight="20dp"
-            android:layout_toEndOf="@+id/textView_accountSmsLabel"
-            android:inputType="numberDecimal" />
+    <TextView
+        android:id="@+id/textView_accountSmsLabel"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/editText_smsNumber"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="24dp"
+        android:gravity="center_vertical"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:text="Номер СМС"
+        android:textColor="@android:color/holo_blue_dark"
+        android:textSize="18dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView_accountValueLabel" />
 
-    </RelativeLayout>
+    <EditText
+        android:id="@+id/editText_smsNumber"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_toEndOf="@+id/textView_accountSmsLabel"
+        android:elevation="2dp"
+        android:inputType="numberDecimal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView_accountSmsLabel"
+        app:layout_constraintTop_toTopOf="@+id/textView_accountSmsLabel" />
 
     <Button
         android:id="@+id/button_addAccount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
         android:layout_alignParentStart="true"
-        android:layout_marginBottom="46dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@android:color/transparent"
         android:onClick="onAccountConfirm"
         android:text="Добавить"
-        android:textColor="@android:color/holo_blue_dark" />
+        android:textColor="@android:color/holo_blue_dark"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <Button
         android:id="@+id/button_cancel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
         android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@android:color/transparent"
         android:onClick="onAccountCancel"
         android:text="Отмена"
-        android:textColor="@color/colorRed" />
+        android:textColor="@color/colorRed"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/button_addAccount" />
 
 
-</RelativeLayout>
+</android.support.constraint.ConstraintLayout>
